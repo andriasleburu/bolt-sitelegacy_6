@@ -1,11 +1,22 @@
 "use client"
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Badge } from '../ui/badge';
 import { MessageCircle, Rss, FileText } from 'lucide-react';
 
-const SpacesList = () => {
+interface Space {
+  id: number;
+  name: string;
+  type: string;
+  visibility: string;
+}
+
+interface SpacesListProps {
+  onSpaceClick: (space: Space) => void;
+}
+
+const SpacesList: React.FC<SpacesListProps> = ({ onSpaceClick }) => {
   const spaces = [
     { id: 1, name: 'Great Barrier Reef Discussion', type: 'chat', visibility: 'public' },
     { id: 2, name: 'Machu Picchu Updates', type: 'feed', visibility: 'public' },
@@ -33,7 +44,11 @@ const SpacesList = () => {
       <CardContent>
         <ul className="space-y-4">
           {spaces.map((space) => (
-            <li key={space.id} className="flex items-center justify-between">
+            <li
+              key={space.id}
+              className="flex items-center justify-between cursor-pointer"
+              onClick={() => onSpaceClick(space)}
+            >
               <div className="flex items-center space-x-2">
                 {getIcon(space.type)}
                 <span>{space.name}</span>
