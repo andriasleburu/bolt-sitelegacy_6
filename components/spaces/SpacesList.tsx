@@ -20,7 +20,7 @@ const SpacesList: React.FC<SpacesListProps> = ({ onSpaceClick }) => {
   const spaces = [
     { id: 1, name: 'Great Barrier Reef Discussion', type: 'chat', visibility: 'public' },
     { id: 2, name: 'Machu Picchu Updates', type: 'feed', visibility: 'public' },
-    { id: 3, name: 'Taj Mahal Restoration Docs', type: 'content', visibility: 'private' },
+    { id: 3, name: 'Taj Mahal Restoration Docs', type: 'files', visibility: 'private' },
   ];
 
   const getIcon = (type: string) => {

@@ -11,13 +11,26 @@ const SpaceTabs = () => {
       </TabsList>
 
       <TabsContent value="feed">
-        <div>Feed content goes here.</div>
+        <div>
+        </div>
       </TabsContent>
       <TabsContent value="chats">
-        <div>Chats content goes here.</div>
+        <div>
+          <ul>
+            <li>User1: Hi there!</li>
+            <li>User2: Hello! How are you?</li>
+            <li>User1: I'm good, thanks!</li>
+          </ul>
+        </div>
       </TabsContent>
       <TabsContent value="files">
-        <div>Files content goes here.</div>
+        <div>
+          <ul>
+            <li>Document1.pdf</li>
+            <li>Image2.png</li>
+            <li>Presentation3.pptx</li>
+          </ul>
+        </div>
       </TabsContent>
     </Tabs>
   );

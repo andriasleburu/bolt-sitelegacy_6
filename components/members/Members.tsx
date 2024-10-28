@@ -45,9 +45,6 @@ const Members = () => {
         </TabsList>
         <TabsContent value="connect">
           <Card>
-            <CardHeader>
-              <CardTitle>Connect with Members</CardTitle>
-            </CardHeader>
             <CardContent>
               <Input className="mb-4" placeholder="Search members..." />
               <ul className="space-y-4">
@@ -102,24 +99,6 @@ const Members = () => {
         </TabsContent>
       </Tabs>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Communication Tools</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>Use these tools to communicate with team members and stakeholders:</p>
-          <div className="mt-4 space-x-2">
-            <Button variant="outline">
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Direct Messaging
-            </Button>
-            <Button variant="outline">
-              <MessageCircle className="mr-2 h-4 w-4" />
-              Discussion Threads
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 };

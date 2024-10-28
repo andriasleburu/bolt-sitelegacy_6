@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { Bell, MessageSquare, Search, User, ChevronDown } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { ModeToggle } from '@/components/mode-toggle';
+import { Input } from '../ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Button } from '../ui/button';
+import { ModeToggle } from '../mode-toggle';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,16 +13,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '../ui/dropdown-menu';
 import { useTheme } from "next-themes"
 
 const Topbar = () => {
   const { setTheme } = useTheme()
 
   return (
-    <div className="flex items-center justify-between h-16 px-4 border-b bg-background">
-      <div className="flex items-center flex-1">
-        <div className="relative w-full max-w-xl">
+    <div className="flex flex-col md:flex-row items-center justify-between h-16 px-4 border-b bg-background">
+      <div className="flex items-center flex-1 w-full md:max-w-xl">
+        <div className="relative w-full">
           <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
           <Input
             type="search"
@@ -31,7 +31,7 @@ const Topbar = () => {
           />
         </div>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-4 mt-2 md:mt-0">
         <ModeToggle />
         <Button variant="ghost" size="icon">
           <MessageSquare className="h-5 w-5" />

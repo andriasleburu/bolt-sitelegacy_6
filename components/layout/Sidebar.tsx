@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
 import { LayoutDashboard, BarChart2, FileText, FolderKanban, Calendar, Users, Layers } from 'lucide-react';
 
 const menuItems = [
@@ -16,11 +15,20 @@ const menuItems = [
   { name: 'Spaces', icon: Layers, href: '/spaces' },
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  className?: string;
+}
+
+// Simple utility function to conditionally join class names
+const cn = (...classes: (string | undefined)[]) => {
+  return classes.filter(Boolean).join(' ');
+};
+
+const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-col w-64 bg-card text-card-foreground">
+    <div className={cn("flex flex-col w-64 bg-card text-card-foreground", className)}>
       <div className="flex items-center justify-center h-16 border-b">
         <span className="text-2xl font-semibold">Sitelegacy</span>
       </div>
